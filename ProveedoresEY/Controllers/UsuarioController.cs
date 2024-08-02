@@ -44,11 +44,11 @@ namespace ProveedoresEY.Controllers
         [HttpGet("logout")]
         public IActionResult Logout()
         {
-            string jwt = GenerateToken("expiredUser", 1);
+            string jwt = GenerateToken("expiredUser", 0);
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = false,
-                Expires = DateTime.UtcNow.AddSeconds(1),
+                Expires = DateTime.UtcNow.AddSeconds(0),
                 Secure = true,
                 SameSite = SameSiteMode.None
             };
